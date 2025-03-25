@@ -1,0 +1,42 @@
+
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all; -- don't use for synthesis, but OK for static numbers
+
+entity spdif_rcvr is
+    generic (
+        clk_in_freq  : natural;
+        clk_out_freq : natural
+    );
+    port (
+        rst     : in  std_logic;
+        clk_24_in  : in  std_logic := 0;
+        clk_22_in : in std_logic := 0;
+		  spdif_data_in : in std_logic := 0;
+		  
+		  I2S_BCLK_in : in std_logic := '0';
+		  I2S_WCLK_in : in std_logic := '0';
+		  I2S_data_out : out std_logic := 'Z';
+		  
+		  sync_flag : out std_logic := 'Z' --go low when sync.
+		  
+		  
+    );
+end clk_div;
+
+architecture arch_spdif_rcvr of spdif_rcvr is
+    
+	 signal sync_clk : std_logic := 0;
+	 
+begin
+    
+	 
+	 process(clk_24_in, clk_22_in, rst)
+        variable bit_pair : std_logic_vector(1 downto 0) : '00';
+		begin
+        
+    end process;
+end BHV;
