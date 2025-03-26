@@ -1,10 +1,10 @@
-
+--written for VHDL-2008 standard
 
 
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.math_real.all; -- don't use for synthesis, but OK for static numbers
+
 
 entity spdif_rcvr is
    
@@ -123,7 +123,7 @@ begin
     end process  sync_input;
 
 	 
-	 
+	 --reads incoming data and looks for the preambles for sync.
 	data_read : process (preamble_x_flag,preamble_y_flag,preamble_z_flag, sync_clk)
 			variable frame_count : integer range 0 to 200 := 0;
 			variable subframe_count : integer range 0 to 3 := 0;
@@ -168,7 +168,7 @@ begin
 	
 	end process data_read;
 	
-	
+	--used to transmit the I2S data operating as a target device receiving external I2S clocks
 	I2S_xmit : process (preamble_x_flag, I2S_BCLK_in, I2S_WCLK_in)
 			
 			variable bit_count : integer range 0 to 63 := 1;
