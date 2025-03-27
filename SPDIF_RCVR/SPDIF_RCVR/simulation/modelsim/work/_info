@@ -1,0 +1,95 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Espdif_rcvr
+Z0 w1743112680
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 41
+Z4 dC:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/modelsim
+Z5 8C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd
+Z6 FC:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd
+l0
+L10 1
+V]g8I5^_`nn>Mm[WL=5<E60
+!s100 m5IkFjUBIof=oSR]3UGOA2
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1743114582
+!i10b 1
+Z9 !s108 1743114582.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd|
+Z11 !s107 C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Aarch_spdif_rcvr
+R1
+R2
+R3
+DEx4 work 10 spdif_rcvr 0 22 ]g8I5^_`nn>Mm[WL=5<E60
+!i122 41
+l43
+L31 187
+Vf[;>L`hU^8j4Q8TMV98W[2
+!s100 YggV7zOeQigG9UJ?HN2Q>0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Espdif_rcvr_vhd_tst
+Z14 w1743115381
+R2
+R3
+!i122 52
+R4
+Z15 8C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/questa/spdif_rcvr.vht
+Z16 FC:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/questa/spdif_rcvr.vht
+l0
+L31 1
+V<ZH_<zcRXF]Vi6]FgVdoh1
+!s100 e]A:Qki15XFdeGBV47MQ_2
+R7
+32
+Z17 !s110 1743115396
+!i10b 1
+Z18 !s108 1743115396.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/questa/spdif_rcvr.vht|
+Z20 !s107 C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/questa/spdif_rcvr.vht|
+!i113 1
+R12
+R13
+Aspdif_rcvr_arch
+R2
+R3
+Z21 DEx4 work 18 spdif_rcvr_vhd_tst 0 22 <ZH_<zcRXF]Vi6]FgVdoh1
+!i122 52
+l76
+Z22 L41 106
+Vza^_>[T=eiNB30_:]zXhI2
+!s100 5NNhA7hPY]F@8nokA2J=70
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13

@@ -1,0 +1,371 @@
+# Compile of spdif_rcvr.vht was successful.
+vsim -gui work.spdif_rcvr_vhd_tst
+# vsim -gui work.spdif_rcvr_vhd_tst 
+# Start time: 16:51:55 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "clk_sel_out".
+#    Time: 0 ps  Iteration: 0  Instance: /spdif_rcvr_vhd_tst/i1 File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 17
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 16:51:55 on Mar 27,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of SPDIF_RCVR.vhd failed with 2 errors.
+# Compile of SPDIF_RCVR.vhd failed with 1 errors.
+# Compile of SPDIF_RCVR.vhd failed with 1 errors.
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.spdif_rcvr_vhd_tst
+# vsim -gui work.spdif_rcvr_vhd_tst 
+# Start time: 16:58:31 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst
+# End time: 16:59:16 on Mar 27,2025, Elapsed time: 0:00:45
+# Errors: 0, Warnings: 6
+# vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst 
+# Start time: 16:59:16 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+add wave  \
+sim:/spdif_rcvr/rst \
+sim:/spdif_rcvr/clk_49_in \
+sim:/spdif_rcvr/clk_45_in \
+sim:/spdif_rcvr/clk_sel_out \
+sim:/spdif_rcvr/spdif_data_in \
+sim:/spdif_rcvr/I2S_BCLK_in \
+sim:/spdif_rcvr/I2S_WCLK_in \
+sim:/spdif_rcvr/I2S_data_out \
+sim:/spdif_rcvr/sync_flag \
+sim:/spdif_rcvr/sync_clk \
+sim:/spdif_rcvr/curr_decoded_bit \
+sim:/spdif_rcvr/mclk \
+sim:/spdif_rcvr/preamble_x_flag \
+sim:/spdif_rcvr/preamble_y_flag \
+sim:/spdif_rcvr/preamble_z_flag \
+sim:/spdif_rcvr/ready_frame \
+sim:/spdif_rcvr/test_bit_counter
+add wave  \
+sim:/spdif_rcvr_vhd_tst/rst \
+sim:/spdif_rcvr_vhd_tst/clk_49_in \
+sim:/spdif_rcvr_vhd_tst/clk_45_in \
+sim:/spdif_rcvr_vhd_tst/clk_sel_out \
+sim:/spdif_rcvr_vhd_tst/I2S_BCLK_in \
+sim:/spdif_rcvr_vhd_tst/I2S_data_out \
+sim:/spdif_rcvr_vhd_tst/I2S_WCLK_in \
+sim:/spdif_rcvr_vhd_tst/spdif_data_in \
+sim:/spdif_rcvr_vhd_tst/sync_flag \
+sim:/spdif_rcvr_vhd_tst/xmit_clk \
+sim:/spdif_rcvr_vhd_tst/tbmclk
+force -freeze sim:/spdif_rcvr_vhd_tst/clk_49_in 1 0, 0 {10000 ps} -r 20ns
+force -freeze sim:/spdif_rcvr_vhd_tst/clk_45_in 1 0, 0 {11000 ps} -r 22ns
+run
+# ** Fatal: (vsim-3421) Value 111 is out of range 0 to 110.
+#    Time: 2453 ns  Iteration: 1  Process: /spdif_rcvr_vhd_tst/i1/sync_input File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 70
+# Fatal error in Process sync_input at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd line 70
+# 
+# HDL call sequence:
+# Stopped at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd 70 Process sync_input
+# 
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+force -freeze sim:/spdif_rcvr_vhd_tst/clk_49_in 1 0, 0 {10000 ps} -r 20ns
+force -freeze sim:/spdif_rcvr_vhd_tst/clk_45_in 1 0, 0 {11000 ps} -r 22ns
+force -freeze sim:/spdif_rcvr_vhd_tst/rst 1 0
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Fatal: (vsim-3421) Value 111 is out of range 0 to 110.
+#    Time: 2453 ns  Iteration: 1  Process: /spdif_rcvr_vhd_tst/i1/sync_input File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 70
+# Fatal error in Process sync_input at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd line 70
+# 
+# HDL call sequence:
+# Stopped at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd 70 Process sync_input
+# 
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.spdif_rcvr_vhd_tst
+# End time: 17:07:51 on Mar 27,2025, Elapsed time: 0:08:35
+# Errors: 1, Warnings: 2
+# vsim -gui work.spdif_rcvr_vhd_tst 
+# Start time: 17:07:51 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+add wave  \
+sim:/spdif_rcvr_vhd_tst/rst \
+sim:/spdif_rcvr_vhd_tst/clk_49_in \
+sim:/spdif_rcvr_vhd_tst/clk_45_in \
+sim:/spdif_rcvr_vhd_tst/clk_sel_out \
+sim:/spdif_rcvr_vhd_tst/I2S_BCLK_in \
+sim:/spdif_rcvr_vhd_tst/I2S_data_out \
+sim:/spdif_rcvr_vhd_tst/I2S_WCLK_in \
+sim:/spdif_rcvr_vhd_tst/spdif_data_in \
+sim:/spdif_rcvr_vhd_tst/sync_flag \
+sim:/spdif_rcvr_vhd_tst/xmit_clk \
+sim:/spdif_rcvr_vhd_tst/tbmclk
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/modelsim/test_spdif_rcvr.mpf).  File can not be renamed.
+# End time: 17:08:46 on Mar 27,2025, Elapsed time: 0:00:55
+# Errors: 1, Warnings: 2
+# vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst 
+# Start time: 17:08:46 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+add wave  \
+sim:/spdif_rcvr/rst \
+sim:/spdif_rcvr/clk_49_in \
+sim:/spdif_rcvr/clk_45_in \
+sim:/spdif_rcvr/clk_sel_out \
+sim:/spdif_rcvr/spdif_data_in \
+sim:/spdif_rcvr/I2S_BCLK_in \
+sim:/spdif_rcvr/I2S_WCLK_in \
+sim:/spdif_rcvr/I2S_data_out \
+sim:/spdif_rcvr/sync_flag \
+sim:/spdif_rcvr/sync_clk \
+sim:/spdif_rcvr/curr_decoded_bit \
+sim:/spdif_rcvr/mclk \
+sim:/spdif_rcvr/preamble_x_flag \
+sim:/spdif_rcvr/preamble_y_flag \
+sim:/spdif_rcvr/preamble_z_flag \
+sim:/spdif_rcvr/ready_frame \
+sim:/spdif_rcvr/test_bit_counter
+add wave  \
+sim:/spdif_rcvr_vhd_tst/rst \
+sim:/spdif_rcvr_vhd_tst/clk_49_in \
+sim:/spdif_rcvr_vhd_tst/clk_45_in \
+sim:/spdif_rcvr_vhd_tst/clk_sel_out \
+sim:/spdif_rcvr_vhd_tst/I2S_BCLK_in \
+sim:/spdif_rcvr_vhd_tst/I2S_data_out \
+sim:/spdif_rcvr_vhd_tst/I2S_WCLK_in \
+sim:/spdif_rcvr_vhd_tst/spdif_data_in \
+sim:/spdif_rcvr_vhd_tst/sync_flag \
+sim:/spdif_rcvr_vhd_tst/xmit_clk \
+sim:/spdif_rcvr_vhd_tst/tbmclk
+force -freeze sim:/spdif_rcvr_vhd_tst/clk_49_in 1 0, 0 {10000 ps} -r 20ns
+force -freeze sim:/spdif_rcvr_vhd_tst/clk_45_in 1 0, 0 {11000 ps} -r 22ns
+force -freeze sim:/spdif_rcvr_vhd_tst/rst 1 0
+run
+# ** Fatal: (vsim-3421) Value 111 is out of range 0 to 110.
+#    Time: 2453 ns  Iteration: 2  Process: /spdif_rcvr_vhd_tst/i1/sync_input File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 70
+# Fatal error in Process sync_input at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd line 70
+# 
+# HDL call sequence:
+# Stopped at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd 70 Process sync_input
+# 
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst
+# End time: 17:18:42 on Mar 27,2025, Elapsed time: 0:09:56
+# Errors: 1, Warnings: 3
+# vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst 
+# Start time: 17:18:42 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+add wave  \
+sim:/spdif_rcvr/rst \
+sim:/spdif_rcvr/clk_49_in \
+sim:/spdif_rcvr/clk_45_in \
+sim:/spdif_rcvr/clk_sel_out \
+sim:/spdif_rcvr/spdif_data_in \
+sim:/spdif_rcvr/I2S_BCLK_in \
+sim:/spdif_rcvr/I2S_WCLK_in \
+sim:/spdif_rcvr/I2S_data_out \
+sim:/spdif_rcvr/sync_flag \
+sim:/spdif_rcvr/sync_clk \
+sim:/spdif_rcvr/curr_decoded_bit \
+sim:/spdif_rcvr/mclk \
+sim:/spdif_rcvr/preamble_x_flag \
+sim:/spdif_rcvr/preamble_y_flag \
+sim:/spdif_rcvr/preamble_z_flag \
+sim:/spdif_rcvr/ready_frame \
+sim:/spdif_rcvr/test_bit_counter
+add wave  \
+sim:/spdif_rcvr_vhd_tst/tb_rst \
+sim:/spdif_rcvr_vhd_tst/tb_clk_49_in \
+sim:/spdif_rcvr_vhd_tst/tb_clk_45_in \
+sim:/spdif_rcvr_vhd_tst/tb_clk_sel_out \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_BCLK \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_data \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_WCLK \
+sim:/spdif_rcvr_vhd_tst/tb_spdif_data_out \
+sim:/spdif_rcvr_vhd_tst/tb_sync_flag \
+sim:/spdif_rcvr_vhd_tst/xmit_clk \
+sim:/spdif_rcvr_vhd_tst/tb_mclk
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_rst 1 0
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_clk_49_in 1 0, 0 {10000 ps} -r 20ns
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_clk_45_in 1 0, 0 {11000 ps} -r 22ns
+run
+# ** Fatal: (vsim-3421) Value 111 is out of range 0 to 110.
+#    Time: 2453 ns  Iteration: 2  Process: /spdif_rcvr_vhd_tst/i1/sync_input File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 70
+# Fatal error in Process sync_input at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd line 70
+# 
+# HDL call sequence:
+# Stopped at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd 70 Process sync_input
+# 
+# WARNING: No extended dataflow license exists
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of SPDIF_RCVR.vhd was successful with warnings.
+# Compile of spdif_rcvr.vht failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of spdif_rcvr.vht failed with 1 errors.
+# Compile of spdif_rcvr.vht failed with 1 errors.
+# Compile of spdif_rcvr.vht failed with 1 errors.
+# Compile of spdif_rcvr.vht failed with 1 errors.
+# Compile of spdif_rcvr.vht failed with 3 errors.
+# Compile of spdif_rcvr.vht failed with 1 errors.
+# Compile of spdif_rcvr.vht was successful.
+# Compile of spdif_rcvr.vht was successful.
+# Compile of spdif_rcvr.vht was successful.
+vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst
+# End time: 17:39:19 on Mar 27,2025, Elapsed time: 0:20:37
+# Errors: 1, Warnings: 13
+# vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst 
+# Start time: 17:39:19 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+# WARNING: No extended dataflow license exists
+add wave  \
+sim:/spdif_rcvr/rst \
+sim:/spdif_rcvr/clk_49_in \
+sim:/spdif_rcvr/clk_45_in \
+sim:/spdif_rcvr/clk_sel_out \
+sim:/spdif_rcvr/spdif_data_in \
+sim:/spdif_rcvr/I2S_BCLK_in \
+sim:/spdif_rcvr/I2S_WCLK_in \
+sim:/spdif_rcvr/I2S_data_out \
+sim:/spdif_rcvr/sync_flag \
+sim:/spdif_rcvr/sync_clk \
+sim:/spdif_rcvr/curr_decoded_bit \
+sim:/spdif_rcvr/mclk \
+sim:/spdif_rcvr/preamble_x_flag \
+sim:/spdif_rcvr/preamble_y_flag \
+sim:/spdif_rcvr/preamble_z_flag \
+sim:/spdif_rcvr/ready_frame \
+sim:/spdif_rcvr/test_bit_counter
+add wave  \
+sim:/spdif_rcvr_vhd_tst/tb_rst \
+sim:/spdif_rcvr_vhd_tst/tb_clk_49_in \
+sim:/spdif_rcvr_vhd_tst/tb_clk_45_in \
+sim:/spdif_rcvr_vhd_tst/tb_clk_sel_out \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_BCLK \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_data \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_WCLK \
+sim:/spdif_rcvr_vhd_tst/tb_spdif_data_out \
+sim:/spdif_rcvr_vhd_tst/tb_sync_flag \
+sim:/spdif_rcvr_vhd_tst/xmit_clk \
+sim:/spdif_rcvr_vhd_tst/tb_mclk \
+sim:/spdif_rcvr_vhd_tst/tb_test_cycle_counter \
+sim:/spdif_rcvr_vhd_tst/tb_test_bclk_counter
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_clk_45_in 1 0, 0 {11000 ps} -r 22ns
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_clk_49_in 1 0, 0 {10000 ps} -r 20ns
+run
+# ** Fatal: (vsim-3421) Value 111 is out of range 0 to 110.
+#    Time: 2453 ns  Iteration: 2  Process: /spdif_rcvr_vhd_tst/i1/sync_input File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 70
+# Fatal error in Process sync_input at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd line 70
+# 
+# HDL call sequence:
+# Stopped at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd 70 Process sync_input
+# 
+# Compile of spdif_rcvr.vht was successful.
+vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst
+# End time: 17:43:35 on Mar 27,2025, Elapsed time: 0:04:16
+# Errors: 1, Warnings: 2
+# vsim -gui work.spdif_rcvr work.spdif_rcvr_vhd_tst 
+# Start time: 17:43:35 on Mar 27,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.spdif_rcvr(arch_spdif_rcvr)
+# Loading work.spdif_rcvr_vhd_tst(spdif_rcvr_arch)
+# WARNING: No extended dataflow license exists
+add wave  \
+sim:/spdif_rcvr/rst \
+sim:/spdif_rcvr/clk_49_in \
+sim:/spdif_rcvr/clk_45_in \
+sim:/spdif_rcvr/clk_sel_out \
+sim:/spdif_rcvr/spdif_data_in \
+sim:/spdif_rcvr/I2S_BCLK_in \
+sim:/spdif_rcvr/I2S_WCLK_in \
+sim:/spdif_rcvr/I2S_data_out \
+sim:/spdif_rcvr/sync_flag \
+sim:/spdif_rcvr/sync_clk \
+sim:/spdif_rcvr/curr_decoded_bit \
+sim:/spdif_rcvr/mclk \
+sim:/spdif_rcvr/preamble_x_flag \
+sim:/spdif_rcvr/preamble_y_flag \
+sim:/spdif_rcvr/preamble_z_flag \
+sim:/spdif_rcvr/ready_frame \
+sim:/spdif_rcvr/test_bit_counter
+add wave  \
+sim:/spdif_rcvr_vhd_tst/tb_rst \
+sim:/spdif_rcvr_vhd_tst/tb_clk_49_in \
+sim:/spdif_rcvr_vhd_tst/tb_clk_45_in \
+sim:/spdif_rcvr_vhd_tst/tb_clk_sel_out \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_BCLK \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_data \
+sim:/spdif_rcvr_vhd_tst/tb_I2S_WCLK \
+sim:/spdif_rcvr_vhd_tst/tb_spdif_data_out \
+sim:/spdif_rcvr_vhd_tst/tb_sync_flag \
+sim:/spdif_rcvr_vhd_tst/xmit_clk \
+sim:/spdif_rcvr_vhd_tst/tb_mclk \
+sim:/spdif_rcvr_vhd_tst/tb_test_cycle_counter \
+sim:/spdif_rcvr_vhd_tst/tb_test_bclk_counter
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_clk_49_in 1 0, 0 {10000 ps} -r 20ns
+force -freeze sim:/spdif_rcvr_vhd_tst/tb_clk_45_in 1 0, 0 {11000 ps} -r 22ns
+run
+# ** Fatal: (vsim-3421) Value 111 is out of range 0 to 110.
+#    Time: 2431 ns  Iteration: 2  Process: /spdif_rcvr_vhd_tst/i1/sync_input File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 70
+# Fatal error in Process sync_input at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd line 70
+# 
+# HDL call sequence:
+# Stopped at C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd 70 Process sync_input
+# 
+# End time: 17:48:29 on Mar 27,2025, Elapsed time: 0:04:54
+# Errors: 1, Warnings: 1

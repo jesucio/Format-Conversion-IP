@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Thu Mar 27 12:45:08 2025
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : SPDIF_RCVR
+Top-level Entity Name : spdif_rcvr
+Family : MAX 10
+Device : 10M08SAE144C8GES
+Power Models : Final
+Total Thermal Power Dissipation : 116.30 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 110.61 mW
+I/O Thermal Power Dissipation : 5.69 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

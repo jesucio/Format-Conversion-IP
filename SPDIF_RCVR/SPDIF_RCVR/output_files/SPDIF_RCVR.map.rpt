@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SPDIF_RCVR
-Wed Mar 26 17:33:39 2025
+Thu Mar 27 12:45:01 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 26 17:33:39 2025          ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 27 12:45:01 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; SPDIF_RCVR                                     ;
 ; Top-level Entity Name              ; spdif_rcvr                                     ;
@@ -261,38 +261,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Mar 26 17:33:33 2025
+    Info: Processing started: Thu Mar 27 12:44:56 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPDIF_RCVR -c SPDIF_RCVR
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file spdif_rcvr.vhd
-    Info (12022): Found design unit 1: spdif_rcvr-arch_spdif_rcvr File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 30
-    Info (12023): Found entity 1: spdif_rcvr File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 9
+    Info (12022): Found design unit 1: spdif_rcvr-arch_spdif_rcvr File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 31
+    Info (12023): Found entity 1: spdif_rcvr File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 10
 Info (12127): Elaborating entity "SPDIF_RCVR" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at SPDIF_RCVR.vhd(22): used explicit default value for signal "I2S_data_out" because signal was never assigned a value File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 22
-Warning (10492): VHDL Process Statement warning at SPDIF_RCVR.vhd(58): signal "mclk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 58
-Warning (10036): Verilog HDL or VHDL warning at SPDIF_RCVR.vhd(132): object "ready_frame" assigned a value but never read File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 132
-Warning (10034): Output port "clk_sel_out" at SPDIF_RCVR.vhd(16) has no driver File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 16
-Warning (10034): Output port "sync_flag" at SPDIF_RCVR.vhd(24) has no driver File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 24
+Warning (10540): VHDL Signal Declaration warning at SPDIF_RCVR.vhd(23): used explicit default value for signal "I2S_data_out" because signal was never assigned a value File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 23
+Warning (10036): Verilog HDL or VHDL warning at SPDIF_RCVR.vhd(40): object "test_bit_counter" assigned a value but never read File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at SPDIF_RCVR.vhd(153): object "ready_frame" assigned a value but never read File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 153
+Warning (10034): Output port "clk_sel_out" at SPDIF_RCVR.vhd(17) has no driver File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 17
+Warning (10034): Output port "sync_flag" at SPDIF_RCVR.vhd(25) has no driver File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "clk_sel_out" is stuck at GND File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 16
-    Warning (13410): Pin "sync_flag" is stuck at GND File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 24
+    Warning (13410): Pin "clk_sel_out" is stuck at GND File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 17
+    Warning (13410): Pin "sync_flag" is stuck at GND File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 25
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 12
-    Warning (15610): No output dependent on input pin "clk_49_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 14
-    Warning (15610): No output dependent on input pin "clk_45_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 15
-    Warning (15610): No output dependent on input pin "spdif_data_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 18
-    Warning (15610): No output dependent on input pin "I2S_BCLK_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 20
-    Warning (15610): No output dependent on input pin "I2S_WCLK_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 21
+    Warning (15610): No output dependent on input pin "rst" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 13
+    Warning (15610): No output dependent on input pin "clk_49_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 15
+    Warning (15610): No output dependent on input pin "clk_45_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 16
+    Warning (15610): No output dependent on input pin "spdif_data_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 19
+    Warning (15610): No output dependent on input pin "I2S_BCLK_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 21
+    Warning (15610): No output dependent on input pin "I2S_WCLK_in" File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 22
 Info (21057): Implemented 9 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 3 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Wed Mar 26 17:33:39 2025
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Thu Mar 27 12:45:01 2025
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:15
 
 

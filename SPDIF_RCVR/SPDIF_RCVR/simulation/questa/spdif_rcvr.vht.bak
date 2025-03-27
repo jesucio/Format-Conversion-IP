@@ -1,0 +1,86 @@
+-- Copyright (C) 2023  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and any partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details, at
+-- https://fpgasoftware.intel.com/eula.
+
+-- ***************************************************************************
+-- This file contains a Vhdl test bench template that is freely editable to   
+-- suit user's needs .Comments are provided in each section to help the user  
+-- fill out necessary details.                                                
+-- ***************************************************************************
+-- Generated on "03/27/2025 12:45:43"
+                                                            
+-- Vhdl Test Bench template for design  :  spdif_rcvr
+-- 
+-- Simulation tool : Questa Intel FPGA (VHDL)
+-- 
+
+LIBRARY ieee;                                               
+USE ieee.std_logic_1164.all;                                
+
+ENTITY spdif_rcvr_vhd_tst IS
+END spdif_rcvr_vhd_tst;
+ARCHITECTURE spdif_rcvr_arch OF spdif_rcvr_vhd_tst IS
+-- constants                                                 
+-- signals                                                   
+SIGNAL clk_45_in : STD_LOGIC;
+SIGNAL clk_49_in : STD_LOGIC;
+SIGNAL clk_sel_out : STD_LOGIC;
+SIGNAL I2S_BCLK_in : STD_LOGIC;
+SIGNAL I2S_data_out : STD_LOGIC;
+SIGNAL I2S_WCLK_in : STD_LOGIC;
+SIGNAL rst : STD_LOGIC;
+SIGNAL spdif_data_in : STD_LOGIC;
+SIGNAL sync_flag : STD_LOGIC;
+COMPONENT spdif_rcvr
+	PORT (
+	clk_45_in : IN STD_LOGIC;
+	clk_49_in : IN STD_LOGIC;
+	clk_sel_out : BUFFER STD_LOGIC;
+	I2S_BCLK_in : IN STD_LOGIC;
+	I2S_data_out : OUT STD_LOGIC;
+	I2S_WCLK_in : IN STD_LOGIC;
+	rst : IN STD_LOGIC;
+	spdif_data_in : IN STD_LOGIC;
+	sync_flag : BUFFER STD_LOGIC
+	);
+END COMPONENT;
+BEGIN
+	i1 : spdif_rcvr
+	PORT MAP (
+-- list connections between master ports and signals
+	clk_45_in => clk_45_in,
+	clk_49_in => clk_49_in,
+	clk_sel_out => clk_sel_out,
+	I2S_BCLK_in => I2S_BCLK_in,
+	I2S_data_out => I2S_data_out,
+	I2S_WCLK_in => I2S_WCLK_in,
+	rst => rst,
+	spdif_data_in => spdif_data_in,
+	sync_flag => sync_flag
+	);
+init : PROCESS                                               
+-- variable declarations                                     
+BEGIN                                                        
+        -- code that executes only once                      
+WAIT;                                                       
+END PROCESS init;                                           
+always : PROCESS                                              
+-- optional sensitivity list                                  
+-- (        )                                                 
+-- variable declarations                                      
+BEGIN                                                         
+        -- code executes for every event on sensitivity list  
+WAIT;                                                        
+END PROCESS always;                                          
+END spdif_rcvr_arch;

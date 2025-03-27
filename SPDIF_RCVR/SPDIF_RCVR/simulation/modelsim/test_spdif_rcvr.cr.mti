@@ -1,0 +1,21 @@
+{C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd} {2 {vcom -work work -2002 -explicit -stats=none {C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity spdif_rcvr
+-- Compiling architecture arch_spdif_rcvr of spdif_rcvr
+** Warning: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd(117): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd(121): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd(125): (vcom-1937) Choice in CASE statement alternative must be locally static.
+
+} {} {}} {C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/questa/spdif_rcvr.vht} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/simulation/questa/spdif_rcvr.vht}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity spdif_rcvr_vhd_tst
+-- Compiling architecture spdif_rcvr_arch of spdif_rcvr_vhd_tst
+
+} {} {}}

@@ -1,0 +1,146 @@
+-- Copyright (C) 2023  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and any partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details, at
+-- https://fpgasoftware.intel.com/eula.
+
+-- ***************************************************************************
+-- This file contains a Vhdl test bench template that is freely editable to   
+-- suit user's needs .Comments are provided in each section to help the user  
+-- fill out necessary details.                                                
+-- ***************************************************************************
+-- Generated on "03/27/2025 12:45:43"
+                                                            
+-- Vhdl Test Bench template for design  :  spdif_rcvr
+-- 
+-- Simulation tool : Questa Intel FPGA (VHDL)
+-- 
+
+LIBRARY ieee;                                               
+USE ieee.std_logic_1164.all;                                
+
+ENTITY spdif_rcvr_vhd_tst IS
+
+port (
+        tb_rst     : in  std_logic := '1';  --pull down for reset
+   	  tb_clk_49_in  : in  std_logic := '0';--49.152MHz
+        tb_clk_45_in : in std_logic := '0'--45.1584MHz
+		  
+    );
+
+END spdif_rcvr_vhd_tst;
+ARCHITECTURE spdif_rcvr_arch OF spdif_rcvr_vhd_tst IS
+-- constants                                                 
+-- signals                                                   
+SIGNAL tb_clk_sel_out : STD_LOGIC := '0';
+SIGNAL tb_I2S_BCLK : STD_LOGIC := '0';
+SIGNAL tb_I2S_data : STD_LOGIC := '0';
+SIGNAL tb_I2S_WCLK : STD_LOGIC := '0';
+SIGNAL tb_spdif_data_out : STD_LOGIC := '0';
+SIGNAL tb_sync_flag : STD_LOGIC;
+
+signal xmit_clk : std_logic := '0';
+signal tb_mclk : std_logic := '0';
+
+-----test variables-----
+signal tb_test_cycle_counter : integer := 0;
+signal tb_test_bclk_counter : integer := 0;
+
+------------------------
+
+
+COMPONENT spdif_rcvr
+	PORT (
+	clk_45_in : IN STD_LOGIC;
+	clk_49_in : IN STD_LOGIC;
+	clk_sel_out : BUFFER STD_LOGIC;
+	I2S_BCLK_in : IN STD_LOGIC;
+	I2S_data_out : OUT STD_LOGIC;
+	I2S_WCLK_in : IN STD_LOGIC;
+	rst : IN STD_LOGIC;
+	spdif_data_in : IN STD_LOGIC;
+	sync_flag : BUFFER STD_LOGIC
+	);
+END COMPONENT;
+
+
+BEGIN
+	i1 : spdif_rcvr
+	PORT MAP (
+-- list connections between master ports and signals
+	clk_45_in => tb_mclk,
+	clk_49_in => tb_mclk,
+	clk_sel_out => tb_clk_sel_out,
+	I2S_BCLK_in => tb_I2S_BCLK,
+	I2S_data_out => tb_I2S_data,
+	I2S_WCLK_in => tb_I2S_WCLK,
+	rst => tb_rst,
+	spdif_data_in => tb_spdif_data_out,
+	sync_flag => tb_sync_flag
+	);
+--init : PROCESS                                               
+---- variable declarations                                     
+--BEGIN                                                        
+--        -- code that executes only once                      
+--WAIT;                                                       
+--END PROCESS init; 
+
+tb_mclk <= tb_clk_45_in;                                          
+														
+gen_clocks : PROCESS (tb_mclk,xmit_clk)                                             
+	variable clk_cyc_counter : integer range 0 to 2000 := 0;
+	variable bclk_counter : integer range 0 to 70 := 0;
+	
+--	constant xmit_clk_count := integer := 32;
+--	constant bclk_count := integer := 16;
+--	constant wlk_count := integer := 1024;
+	
+	BEGIN                                                         
+		if falling_edge(tb_mclk) then
+			clk_cyc_counter := clk_cyc_counter + 1;
+			tb_test_cycle_counter <= clk_cyc_counter; -----test
+			if clk_cyc_counter >= 32 then
+				xmit_clk <= not xmit_clk;
+				bclk_counter := bclk_counter + 1;
+				tb_test_bclk_counter <= bclk_counter; -----test
+				clk_cyc_counter := 0;
+				tb_test_cycle_counter <= clk_cyc_counter; -----test
+				tb_I2S_BCLK <= '0';
+			elsif clk_cyc_counter = 16 then
+				tb_I2S_BCLK <= '1';
+			end if;
+			
+			if bclk_counter = 16 then
+				tb_I2S_WCLK <= '1';
+			elsif bclk_counter >= 32 then
+				tb_I2S_WCLK <= '0';
+				bclk_counter := 0;
+				tb_test_bclk_counter <= bclk_counter; -----test
+			end if;
+		end if;
+
+END PROCESS gen_clocks;
+
+gen_data : process (xmit_clk)
+
+	type sin_data is array (49 downto 0) of std_logic_vector(31 downto 0);
+	constant sin_1764Hz : sin_data := (x"00000000", x"001FD510", x"003DAA18", x"00579F39", x"006C12EC", x"0079BC36", x"007FBF56", x"007DBB99", x"0073D166", x"0062A038", x"004B3C9A", x"002F1EC7", x"00100B01", x"FFEFF52C", x"FFD0E163", x"FFB4C38A", x"FF9D5FE5", x"FF8C2EAD", x"FF82446F", x"FF8040A7", x"FF8643BD", x"FF93ECFC", x"FFA860A6", x"FFC255C1", x"FFE02AC5",x"00000000", x"001FD510", x"003DAA18", x"00579F39", x"006C12EC", x"0079BC36", x"007FBF56", x"007DBB99", x"0073D166", x"0062A038", x"004B3C9A", x"002F1EC7", x"00100B01", x"FFEFF52C", x"FFD0E163", x"FFB4C38A", x"FF9D5FE5", x"FF8C2EAD", x"FF82446F", x"FF8040A7", x"FF8643BD", x"FF93ECFC", x"FFA860A6", x"FFC255C1", x"FFE02AC5");
+	constant sin_882Hz : sin_data := (x"00000000", x"00100AEA", x"001FD510", x"002F1EB2", x"003DAA18", x"004B3C88", x"00579F39", x"0062A02A", x"006C12EC", x"0073D15C", x"0079BC36", x"007DBB95", x"007FBF56", x"007FBF58", x"007DBB99", x"0079BC3C", x"0073D166", x"006C12F8", x"0062A038", x"00579F4A", x"004B3C9A", x"003DAA2B", x"002F1EC7", x"001FD526", x"00100B01", x"00000016", x"FFEFF52C", x"FFE02B05", x"FFD0E163", x"FFC255FC", x"FFB4C38A", x"FFA860D7", x"FF9D5FE5", x"FF93ED20", x"FF8C2EAD", x"FF8643D1", x"FF82446F", x"FF8040AB", x"FF8040A7", x"FF824463", x"FF8643BD", x"FF8C2E91", x"FF93ECFC", x"FF9D5FBA", x"FFA860A6", x"FFB4C354", x"FFC255C1", x"FFD0E125", x"FFE02AC5", x"FFEFF4E9");
+
+begin
+
+
+
+end process gen_data;
+
+                                          
+END spdif_rcvr_arch;
