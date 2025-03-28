@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
 
--- DATE "03/27/2025 12:45:11"
+-- DATE "03/28/2025 09:46:54"
 
 -- 
 -- Device: Altera 10M08SAE144C8GES Package EQFP144
@@ -95,7 +95,7 @@ ENTITY 	spdif_rcvr IS
 	spdif_data_in : IN std_logic;
 	I2S_BCLK_in : IN std_logic;
 	I2S_WCLK_in : IN std_logic;
-	I2S_data_out : OUT std_logic;
+	I2S_data_out : BUFFER std_logic;
 	sync_flag : BUFFER std_logic
 	);
 END spdif_rcvr;

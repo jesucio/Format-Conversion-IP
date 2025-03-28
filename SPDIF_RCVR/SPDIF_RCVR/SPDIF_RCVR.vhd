@@ -76,6 +76,13 @@ begin
 				if (bit_sync_okay = '0') then
 						if bit_pair(1) /= bit_pair(0) then --look for a state change in datastream
 							min_bit_count := bit_counter;
+							
+							if bit_counter >= (min_bit_count * 2) then
+								trans_loc := '0';
+							elsif bit_counter = min_bit_count then
+								trans_loc := '1';
+							end if;
+							
 							if min_bit_count = prev_min_bit_count then
 								if bit_verify_count >= 6 then
 									bit_sync_okay := '1';
@@ -84,11 +91,7 @@ begin
 									bit_verify_count := bit_verify_count + 1;
 								end if;
 							end if;
-							if bit_counter >= (min_bit_count * 2) then
-								trans_loc := '0';
-							elsif bit_counter = min_bit_count then
-								trans_loc := '1';
-							end if;
+							
 							bit_counter := 0;
 							test_bit_counter <= bit_counter;-----test
 						end if;

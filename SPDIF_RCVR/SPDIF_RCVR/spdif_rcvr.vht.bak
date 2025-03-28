@@ -58,7 +58,7 @@ signal tb_test_bclk_counter : integer := 0;
 ------------------------
 
 
-COMPONENT spdif_rcvr
+COMPONENT spdif_rcvr is
 	PORT (
 	clk_45_in : IN STD_LOGIC;
 	clk_49_in : IN STD_LOGIC;

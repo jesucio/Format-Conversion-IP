@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SPDIF_RCVR
-Thu Mar 27 12:45:01 2025
+Fri Mar 28 09:46:45 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 27 12:45:01 2025          ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 28 09:46:45 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; SPDIF_RCVR                                     ;
 ; Top-level Entity Name              ; spdif_rcvr                                     ;
@@ -261,7 +261,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Mar 27 12:44:56 2025
+    Info: Processing started: Fri Mar 28 09:46:39 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SPDIF_RCVR -c SPDIF_RCVR
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -271,7 +271,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file spdif_r
 Info (12127): Elaborating entity "SPDIF_RCVR" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at SPDIF_RCVR.vhd(23): used explicit default value for signal "I2S_data_out" because signal was never assigned a value File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 23
 Warning (10036): Verilog HDL or VHDL warning at SPDIF_RCVR.vhd(40): object "test_bit_counter" assigned a value but never read File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 40
-Warning (10036): Verilog HDL or VHDL warning at SPDIF_RCVR.vhd(153): object "ready_frame" assigned a value but never read File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 153
+Warning (10036): Verilog HDL or VHDL warning at SPDIF_RCVR.vhd(160): object "ready_frame" assigned a value but never read File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 160
 Warning (10034): Output port "clk_sel_out" at SPDIF_RCVR.vhd(17) has no driver File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 17
 Warning (10034): Output port "sync_flag" at SPDIF_RCVR.vhd(25) has no driver File: C:/Users/jortiz/Desktop/You are an Idiot/encoderdecoders/Format-Conversion-IP/SPDIF_RCVR/SPDIF_RCVR/SPDIF_RCVR.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
@@ -291,8 +291,8 @@ Info (21057): Implemented 9 device resources after synthesis - the final resourc
     Info (21059): Implemented 3 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 4827 megabytes
-    Info: Processing ended: Thu Mar 27 12:45:01 2025
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Processing ended: Fri Mar 28 09:46:45 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:14
 
 

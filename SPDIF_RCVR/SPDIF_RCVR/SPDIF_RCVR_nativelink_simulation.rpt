@@ -18,5 +18,6 @@ Sim dir               :  simulation\questa
 
 Info: Starting NativeLink simulation with Questa Intel FPGA software
 Sourced NativeLink script c:/intelfpga_lite/23.1std/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File SPDIF_RCVR_run_msim_gate_vhdl.do already exists - backing up current file as SPDIF_RCVR_run_msim_gate_vhdl.do.bak
 Info: Spawning Questa Intel FPGA Simulation software 
 Info: NativeLink simulation flow was successful

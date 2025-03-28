@@ -6,7 +6,7 @@ clk_sel_out << <GND>
 spdif_data_in => ~NO_FANOUT~
 I2S_BCLK_in => ~NO_FANOUT~
 I2S_WCLK_in => ~NO_FANOUT~
-I2S_data_out <= comb.DB_MAX_OUTPUT_PORT_TYPE
+I2S_data_out << comb.DB_MAX_OUTPUT_PORT_TYPE
 sync_flag << <GND>
 
 
