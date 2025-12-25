@@ -22,7 +22,7 @@ port (
 --outputs
     DATA_CH1_out : out signed ((bit_depth - 1) downto 0);
     DATA_CH2_out : out signed ((bit_depth - 1) downto 0);
-    DATA_latch : out std_logic
+	 DATA_latch : out std_logic
 
     );
     
@@ -72,6 +72,8 @@ begin
 				data_latch <= '1'; --trigger data latch flag to begin serial meter data assignment
 				bclk_counter := 0;
 			when others =>
+				left_data <= left_data;
+				right_data <= right_data;
 		end case;
 	
 		wclk_prev := wclk;

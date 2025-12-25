@@ -26,8 +26,6 @@
 
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
-use STD.textio.all;
-use ieee.std_logic_textio.all;
 use IEEE.numeric_std.all;
 
 
@@ -36,27 +34,35 @@ port (
 	system_clock : in std_logic
 	);
 END I2S_Receiver_vhd_tst;
-ARCHITECTURE I2S_Receiver_arch OF I2S_Receiver_vhd_tst IS
+
+ARCHITECTURE I2S_Receiver_tst_arch OF I2S_Receiver_vhd_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL BCLK : STD_LOGIC := '0';
-SIGNAL DATA : STD_LOGIC := '0';
-SIGNAL DATA_CH1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL DATA_CH2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL data : STD_LOGIC := '0';
+SIGNAL DATA_CH1 : signed(31 DOWNTO 0);
+SIGNAL DATA_CH2 : signed(31 DOWNTO 0);
 SIGNAL MCLK : STD_LOGIC := '0';
 SIGNAL sample_rate : integer;
 SIGNAL WCLK : STD_LOGIC := '0';
 signal data_block_left, data_block_right : std_logic_vector(31 downto 0);
 
 
+signal test_data_counter : integer; ---------------------<<< test var
+signal test_dummy_data_int : integer; ---------------------<<< test var
+signal test_dummy_data_std : std_logic_vector(31 downto 0); ---------------------<<< test var
+
+
+
+
 COMPONENT I2S_Receiver
 	PORT (
 	BCLK : IN STD_LOGIC;
-	DATA : IN STD_LOGIC;
-	DATA_CH1_out : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-	DATA_CH2_out : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-	MCLK : IN STD_LOGIC;
-	sample_rate : IN integer;
+	serial_data_in : IN STD_LOGIC;
+	DATA_CH1_out : out signed(31 DOWNTO 0);
+	DATA_CH2_out : out signed(31 DOWNTO 0);
+	--MCLK : IN STD_LOGIC;
+	--sample_rate : IN integer;
 	WCLK : IN STD_LOGIC
 	);
 END COMPONENT;
@@ -68,11 +74,11 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	BCLK => BCLK,
-	DATA => DATA,
+	serial_data_in => data,
 	DATA_CH1_out => DATA_CH1,
 	DATA_CH2_out => DATA_CH2,
-	MCLK => MCLK,
-	sample_rate => sample_rate,
+	--MCLK => MCLK,
+	--sample_rate => sample_rate,
 	WCLK => WCLK
 	);
                                     
@@ -86,14 +92,9 @@ sample_rate <= 48000;
 mclk <= system_clock;
 if falling_edge(system_clock) then
 
-
-	if bclk_counter >= 31 then
-		bclk_count_cycle := bclk_count_cycle + 1;
+	if bclk_counter >= 3 then
 		bclk_counter := 0;
-		if bclk_count_cycle >= 3 then 
-			bclk <= not bclk;
-			bclk_count_cycle := 0;
-		end if;
+		bclk <= not bclk;
 	else
 		bclk_counter := bclk_counter + 1;
 	end if;
@@ -122,22 +123,27 @@ begin
 			dummy_data := x"00000000";
 		else
 			dummy_data_int := to_integer(unsigned(dummy_data)) + 1;
+			test_dummy_data_int <= dummy_data_int; ---------------------<<< test var
 			dummy_data := std_logic_vector(to_unsigned(dummy_data_int,dummy_data'length));
-		end if;
+			test_dummy_data_std <= dummy_data; ---------------------<<< test var
+
+			end if;
 	elsif falling_edge(wclk) then
 		data_counter := 0;
 	end if;
 
 	if rising_edge(bclk) then
-		data <= dummy_data(data_counter);
-		if data_counter <= 31 then
+		test_data_counter <= data_counter; ---------------------<<< test var
+ 		data <= dummy_data(data_counter);
+		if data_counter >= 31 then
 			data_counter := 0;
 		else 
 			data_counter := data_counter + 1;	
 		end if;
+		
 	end if;
 
 
 end process get_data;
                       
-END I2S_Receiver_arch;
+END I2S_Receiver_tst_arch;
