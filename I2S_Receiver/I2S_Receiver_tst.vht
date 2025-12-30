@@ -84,8 +84,7 @@ BEGIN
                                     
 gen_clock : process (mclk,system_clock,bclk,wclk)
 
-	variable bclk_counter,wclk_counter : integer range 0 to 4000000 := 0;
-	variable bclk_count_cycle : integer range 0 to 5 := 0;
+	variable bclk_counter,wclk_counter : integer range 0 to 40000 := 0;
 	
 begin
 sample_rate <= 48000;
@@ -95,15 +94,14 @@ if falling_edge(system_clock) then
 	if bclk_counter >= 3 then
 		bclk_counter := 0;
 		bclk <= not bclk;
+		if wclk_counter >= 63 then
+			wclk <= not wclk;
+			wclk_counter := 0;
+		else
+			wclk_counter := wclk_counter + 1;
+		end if;
 	else
 		bclk_counter := bclk_counter + 1;
-	end if;
-	
-	if wclk_counter >= 511 then
-		wclk <= not wclk;
-		wclk_counter := 0;
-	else
-		wclk_counter := wclk_counter + 1;
 	end if;
 	
 end if;
@@ -113,36 +111,35 @@ end process gen_clock;
 
 get_data: process (bclk,wclk)
 
-	variable data_counter : integer range 0 to 33 := 0 ;
+	variable data_counter : integer range 0 to 33 := 31 ;
 	variable dummy_data : std_logic_vector(31 downto 0) := x"00000000";
 	variable dummy_data_int : integer;	
+	variable prev_wclk : std_logic := '0';
+	
 begin
 
-	if rising_edge(wclk) then
-		if dummy_data >= x"FFFFFFFF" then
-			dummy_data := x"00000000";
-		else
-			dummy_data_int := to_integer(unsigned(dummy_data)) + 1;
+	
+	if rising_edge(bclk) then
+		if data_counter >= 31 or (prev_wclk /= wclk) then
+			data_counter := 0;
+			if dummy_data >= x"00FFFFFF" then
+				dummy_data := x"00000000";
+			end if;
+			dummy_data_int := (to_integer(unsigned(dummy_data)));
+			dummy_data_int := dummy_data_int + 1;
 			test_dummy_data_int <= dummy_data_int; ---------------------<<< test var
 			dummy_data := std_logic_vector(to_unsigned(dummy_data_int,dummy_data'length));
 			test_dummy_data_std <= dummy_data; ---------------------<<< test var
-
-			end if;
-	elsif falling_edge(wclk) then
-		data_counter := 0;
-	end if;
-
-	if rising_edge(bclk) then
-		test_data_counter <= data_counter; ---------------------<<< test var
- 		data <= dummy_data(data_counter);
-		if data_counter >= 31 then
-			data_counter := 0;
 		else 
 			data_counter := data_counter + 1;	
 		end if;
 		
+		test_data_counter <= data_counter; ---------------------<<< test var
+ 		data <= dummy_data(data_counter);
+	
 	end if;
-
+	
+	prev_wclk := wclk;
 
 end process get_data;
                       
